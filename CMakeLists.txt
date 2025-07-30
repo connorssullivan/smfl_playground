@@ -12,6 +12,14 @@ FetchContent_Declare(SFML
     SYSTEM)
 FetchContent_MakeAvailable(SFML)
 
-add_executable(main src/main.cpp)
+add_executable(main 
+src/main.cpp
+src/MyEntity.cpp
+src/TileMap.cpp
+src/ParticleSystem.cpp
+)
 target_compile_features(main PRIVATE cxx_std_17)
-target_link_libraries(main PRIVATE SFML::Graphics)
+target_link_libraries(main PRIVATE SFML::Graphics SFML::Audio)
+
+
+target_include_directories(main PRIVATE include)
